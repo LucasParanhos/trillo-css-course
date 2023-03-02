@@ -89,7 +89,7 @@
 
       content: "";
       height: 0rem;
-      width: 150%;
+      width: 0rem;
       border-radius: 50rem;
       background: radial-gradient(rgba($light-gray-1, 0.5), rgba($light-gray-4, 0.5));
       transition: all 0.1s;
@@ -99,6 +99,7 @@
     &:hover::after{
       height: 5rem;
       min-width: 5rem;
+      width: 150%;
     }
   }
 

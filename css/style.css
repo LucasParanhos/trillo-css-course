@@ -117,14 +117,15 @@ body {
       transform: translate(-50%, -50%);
       content: "";
       height: 0rem;
-      width: 150%;
+      width: 0rem;
       border-radius: 50rem;
       background: radial-gradient(rgba(250, 249, 249, 0.5), rgba(204, 204, 204, 0.5));
       transition: all 0.1s;
       z-index: -1; }
     .user-nav > *:hover::after {
       height: 5rem;
-      min-width: 5rem; }
+      min-width: 5rem;
+      width: 150%; }
   .user-nav__icon-box {
     height: 1.5rem; }
     .user-nav__icon-box::before {
@@ -153,6 +154,58 @@ body {
   .user-nav__user-name {
     align-self: center;
     margin-left: 1rem; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  list-style: none;
+  padding: 3.5rem 0; }
+  .sidebar .side-nav {
+    color: #faf9f9; }
+    .sidebar .side-nav__item {
+      padding: 2rem 0rem;
+      width: 100%;
+      position: relative; }
+      .sidebar .side-nav__item:not(:last-child) {
+        margin-bottom: 0.5rem; }
+      .sidebar .side-nav__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0.3rem;
+        background-color: #eb2f64;
+        transform: scaleY(0);
+        transition: transform 0.1s 0.2s, width 0.2s cubic-bezier(1, 0, 0, 1) 0.1s background-color 0.1s;
+        transform-origin: center; }
+      .sidebar .side-nav__item:hover:before {
+        width: 100%;
+        transform: scaleY(1);
+        transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s; }
+      .sidebar .side-nav__item:active::before {
+        background-color: #ff3366; }
+    .sidebar .side-nav__link:visited, .sidebar .side-nav__link:link {
+      display: flex;
+      align-items: center;
+      color: inherit;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1.5rem 3rem;
+      z-index: 1;
+      position: relative; }
+    .sidebar .side-nav__icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: currentColor;
+      margin-right: 2rem; }
+  .sidebar .legal {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem;
+    color: #ccc; }
 
 .container {
   max-width: 120rem;
