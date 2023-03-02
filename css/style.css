@@ -40,12 +40,85 @@ body {
   background-color: #eb2f64;
   color: #fff; }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    text-shadow: none; }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1);
+    text-shadow: none; } }
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.6;
   color: #333; }
+
+.btn--inline {
+  border: none;
+  background-color: transparent;
+  color: #eb2f64;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: .2rem;
+  cursor: pointer;
+  transition: all .2s; }
+  .btn--inline:hover {
+    color: #333; }
+  .btn--inline:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
+
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #faf9f9; }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 3rem; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__icon, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #eb2f64; }
+  .overview__location {
+    display: flex;
+    font-size: 1.2rem;
+    vertical-align: center; }
+  .overview__icon-location {
+    margin-right: 0.5rem; }
+  .overview__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: stretch;
+    background-color: #eb2f64;
+    color: #fff;
+    margin-left: 3rem;
+    padding: 0 2rem; }
+    .overview__rating-average {
+      font-size: 2.25rem;
+      font-weight: 300;
+      margin-bottom: -0.3rem; }
+    .overview__rating-count {
+      font-size: 0.8rem;
+      text-transform: uppercase; }
 
 .header {
   height: 7rem;
@@ -179,7 +252,7 @@ body {
         width: 0.3rem;
         background-color: #eb2f64;
         transform: scaleY(0);
-        transition: transform 0.1s 0.2s, width 0.2s cubic-bezier(1, 0, 0, 1) 0.1s background-color 0.1s;
+        transition: transform 0.1s 0.2s, width 0.2s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
         transform-origin: center; }
       .sidebar .side-nav__item:hover:before {
         width: 100%;
@@ -221,7 +294,7 @@ body {
 
 .sidebar {
   background-color: #333;
-  flex: 0 1 25rem; }
+  flex: 0 0 25rem; }
 
 .hotel-view {
   background-color: #fff;
