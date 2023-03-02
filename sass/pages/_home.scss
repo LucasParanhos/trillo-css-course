@@ -1,0 +1,23 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: $light-gray-2;
+  box-shadow: $default-shadow;
+  min-height: 50rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.content {
+    display: flex;
+}
+
+.sidebar {
+    background-color: $dark-gray-1;
+    flex: 0 1 25rem;
+}
+
+.hotel-view {
+    background-color: $white;
+    flex: 4 1 80%;
+}

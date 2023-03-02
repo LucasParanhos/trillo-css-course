@@ -1,0 +1,144 @@
+.header {
+  height: 7rem;
+  background-color: $white;
+  border-bottom: 1px solid $light-gray-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus-within {
+    .search__input {
+      width: 100%;
+      background-color: $light-gray-3;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: $light-gray-2;
+    border: none;
+    outline: none;
+    color: inherit;
+    padding: 1rem 2rem;
+    border-radius: 50rem;
+    width: 90%;
+    transition: all ease-in 0.2s;
+    margin-right: -3.5rem;
+
+    &::placeholder {
+      color: $light-gray-4;
+      font-weight: 100;
+    }
+
+    &:focus {
+      background-color: $light-gray-3;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    transition: all ease-in 0.08s;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(0.2rem);
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $dark-gray-3;
+  }
+}
+
+.user-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    cursor: pointer;
+    margin: 0 2rem;
+    z-index: 1;
+    position: relative;
+
+    &::after {
+      @include absCenter;
+
+      content: "";
+      height: 0rem;
+      width: 150%;
+      border-radius: 50rem;
+      background: radial-gradient(rgba($light-gray-1, 0.5), rgba($light-gray-4, 0.5));
+      transition: all 0.1s;
+      z-index: -1;
+    }
+
+    &:hover::after{
+      height: 5rem;
+      min-width: 5rem;
+    }
+  }
+
+  &__icon-box {
+    height: 1.5rem;
+
+    &::before {
+      content: attr(data-count);
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50rem;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  &__user {
+    display: flex;
+    margin-right: 4rem;
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50rem;
+  }
+
+  &__user-name {
+    align-self: center;
+    margin-left: 1rem;
+  }
+}

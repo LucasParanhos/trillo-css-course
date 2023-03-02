@@ -1,0 +1,32 @@
+/*breakpoint argument choises:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone) {
+    @media only screen and (max-width: $small-width) {
+      @content;
+    }
+  } @else if($breakpoint == tab-port) {
+    @media only screen and (max-width: $medium-width) {
+      @content;
+    }
+  } @else if($breakpoint == tab-land) {
+    @media only screen and (max-width: $large-width) {
+      @content;
+    }
+  } @else if($breakpoint == big-desktop) {
+    @media only screen and (min-width: $huge-width) {
+      @content;
+    }
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
