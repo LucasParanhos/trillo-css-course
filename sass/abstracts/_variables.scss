@@ -23,8 +23,9 @@ $black: #000000;
 
 // Shadows
 
-$default-shadow: 0 2rem 6rem rgba($black, .3);
-$small-box-shadow: 0 1rem 4rem rgba($black, .25);
+$default-shadow: 0 2rem 6rem rgba($black, 0.3);
+$small-box-shadow: 0 1rem 4rem rgba($black, 0.25);
+$box-shadow-light: 0 2rem 5rem rgba($black, 0.06);
 
 //Font sizes
 $default-font-size: 1.6rem;
@@ -34,3 +35,6 @@ $small-width: 37.5em; //600px
 $medium-width: 56.25em; //900px
 $large-width: 75em; //1200px
 $huge-width: 112.5em; //1800px
+
+//Borders
+$line: 1px solid $light-gray-2;

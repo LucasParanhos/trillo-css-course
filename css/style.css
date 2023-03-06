@@ -82,7 +82,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #faf9f9; }
+  border-bottom: 1px solid #f4f2f2; }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -120,10 +120,54 @@ body {
       font-size: 0.8rem;
       text-transform: uppercase; }
 
+.detail__paragraph:not(:last-of-type) {
+  margin-bottom: 1rem; }
+
+.detail__list {
+  margin: 3rem 0;
+  list-style: none;
+  padding: 3rem;
+  border-top: 1px solid #f4f2f2;
+  border-bottom: 1px solid #f4f2f2;
+  display: flex;
+  flex-wrap: wrap; }
+  .detail__list--item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+    align-items: center;
+    display: flex; }
+    .detail__list--item::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.7px;
+      background-size: cover;
+      background-color: #eb2f64;
+      -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+      mask-image: url(../../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover; }
+
+.detail__recommend {
+  font-size: 1.3rem;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .detail__recommend--photo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50rem;
+    border: 3px solid #fff;
+    box-sizing: content-box; }
+    .detail__recommend--photo:not(:first-child) {
+      margin-left: -1.5rem; }
+
 .header {
   height: 7rem;
   background-color: #fff;
-  border-bottom: 1px solid #faf9f9;
+  border-bottom: 1px solid #f4f2f2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -299,3 +343,20 @@ body {
 .hotel-view {
   background-color: #fff;
   flex: 4 1 80%; }
+
+.detail {
+  display: flex;
+  background: #faf9f9;
+  padding: 4.5rem;
+  border-bottom: 1px solid #f4f2f2; }
+  .detail__description {
+    background-color: #fff;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+    padding: 3rem;
+    font-size: 1.4rem; }
+  .detail__user-reviews {
+    background-color: #fff;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+    flex: 1; }
